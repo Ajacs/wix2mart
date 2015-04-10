@@ -8,10 +8,12 @@
 			<h2>{{product.name}}</h2>
 			<p class="text-danger">{{product.description}}</p>
 			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			<p><a ui-sref="view({product_id:product.id})" class="btn btn-primary" href="#" role="button">Leer mas »</a></p>
+			<p><a ui-sref="products.detail({product_id:product.id})" class="btn btn-primary" href="#" role="button">Leer mas »</a></p>
 			<img ng-src="{{product.product_img}}"class="img-circle" width="140" height="140" />
 		</div>
 	</div>
+
+	<div ui-view=""></div>
 
 
 </div>

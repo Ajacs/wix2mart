@@ -14,4 +14,5 @@ angular.module('wix2martApp', [
 
     $locationProvider.html5Mode(true);
     RestangularProvider.setBaseUrl('api/');
+    RestangularProvider.setDefaultHttpFields({cache: true});
   });

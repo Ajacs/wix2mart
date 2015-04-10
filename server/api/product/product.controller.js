@@ -18,7 +18,7 @@ exports.index = function(req, res) {
 	{
 		'id': 2,
 		'name': 'Leche',
-		'description': 'Leche wiwi. La mejor !',
+		'description': 'Leche homie. La mejor !',
 		'product_img': 'http://cdn.ecoportal.net/var/ecoportal_net/storage/images/eco-noticias/harvard_elimina_la_leche_y_demas_lacteos_de_la_dieta_saludable/2009966-1-esl-ES/Harvard_elimina_la_leche_y_demas_lacteos_de_la_dieta_saludable.jpg'
 	},
 	{

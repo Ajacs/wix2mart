@@ -9,7 +9,7 @@ angular.module('wix2martApp')
 		resolve: {
 			products: function(Restangular){
 			// First way of creating a Restangular object. Just saying the base URL
-			var productsList = Restangular.all('products').getList();
+			var productsList = Restangular.all('products').getList().$object;
 			return productsList;	
 			// This will query /accounts and return a promise.
 			/*productsList.getList().then(function(products) {
@@ -17,19 +17,25 @@ angular.module('wix2martApp')
 				console.log(products);
 				return products;
 			});*/
-		}
-	},
-	controller: 'ProductsCtrl'
-}).state('view', {
-	url: '/products/:product_id',
+}
+},
+controller: 'ProductsCtrl'
+}).state('products.detail', {
+	url: '/detail/:product_id',
 	templateUrl: 'app/products/product_detail.html',
 	resolve: {
-		product_detail: function(Restangular, $stateParams){
-			var product_detail = Restangular.one('products', $stateParams.product_id).get();
-			console.log(product_detail);
-			return product_detail;
+		product_detail: function(products, $stateParams){
+			console.log('products padre');
+			for(var i=0;i<=products.length;i++){
+				if(products[i].id == $stateParams.product_id){
+					return products[i];
+				}
+				
+			}
 		}
 	},
 	controller: 'ProductDetailController'
 });
+
+
 });
